@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F8F3EC">
+<title>E-COMMERCE by Ayesha | E-commerce Growth Studio</title>
+<meta name="description" content="E-COMMERCE by Ayesha is an e-commerce growth studio for D2C brands, marketplaces and performance-led growth across Amazon, Flipkart, Meesho and more.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --cream:#F8F3EC;
+  --cream-2:#FBF8F3;
+  --paper:#FFFDF9;
+  --burgundy:#65001E;
+  --burgundy-2:#7A1231;
+  --ink:#4E0A20;
+  --muted:#765D65;
+  --line:rgba(101,0,30,.14);
+  --rose:#EEDDD8;
+  --rose-2:#F4E8E2;
+  --shadow:0 22px 55px rgba(76,26,37,.10);
+  --radius:28px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 88% 12%, rgba(238,221,216,.55), transparent 25%),
+    radial-gradient(circle at 12% 65%, rgba(255,255,255,.85), transparent 30%),
+    var(--cream);
+  color:var(--ink);
+  font-family:'Poppins',Arial,Helvetica,sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1390px,calc(100% - 56px));margin:auto}
+
+/* ---------- navigation ---------- */
+.nav-wrap{padding:22px 0 0;position:relative;z-index:20}
+.nav{
+  min-height:88px;
+  background:rgba(255,253,249,.92);
+  border:1px solid rgba(101,0,30,.10);
+  border-radius:48px;
+  box-shadow:0 16px 38px rgba(67,20,31,.10);
+  display:flex;align-items:center;
+  padding:12px 18px 12px 22px;
+  backdrop-filter:blur(18px);
+}
+.brand{display:flex;align-items:center;gap:16px;min-width:330px}
+.brand-mark{
+  width:62px;height:62px;border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(101,0,30,.22);
+}
+.brand-mark img{width:100%;height:100%;object-fit:cover;}
+.brand-name{font:400 28px/1 Georgia,serif;letter-spacing:1px;color:var(--burgundy)}
+.brand-script{font:italic 18px/1.2 Georgia,serif;margin-top:3px;color:var(--burgundy)}
+.nav-links{display:flex;align-items:center;justify-content:center;gap:30px;flex:1}
+.nav-links a{font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--ink);position:relative;padding:26px 0}
+.nav-links a.active:after{content:"";position:absolute;bottom:11px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--burgundy);transform:translateX(-50%)}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.btn{
+  font-family:'Poppins',sans-serif;
+  border:0;border-radius:999px;padding:17px 27px;
+  display:inline-flex;align-items:center;justify-content:center;gap:14px;
+  font-size:13px;font-weight:800;letter-spacing:.03em;
+  cursor:pointer;transition:transform .3s var(--ease), background .3s var(--ease), box-shadow .3s var(--ease);
+}
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(101,0,30,.2);
+}
+.btn-primary{background:var(--burgundy);color:#fffaf5;box-shadow:0 10px 24px rgba(101,0,30,.18)}
+.btn-primary:hover{background:var(--burgundy-2);}
+.menu{
+  width:58px;height:58px;border:0;border-radius:50%;background:var(--burgundy);color:white;
+  display:grid;place-items:center;cursor:pointer;font-size:25px;line-height:1;
+}
+.mobile-menu{display:none}
+
+/* ---------- social badges style ---------- */
+.social-icons-group{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:20px;
+  position:relative;
+  z-index:2;
+}
+.social-badge{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:var(--burgundy);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  transition:transform .3s var(--ease), background .3s var(--ease);
+  box-shadow:0 8px 20px rgba(101,0,30,.2);
+}
+.social-badge:hover{
+  transform:translateY(-3px);
+  background:var(--burgundy-2);
+}
+.social-badge svg{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+}
+
+/* ---------- hero ---------- */
+.hero{padding:76px 0 34px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;min-height:690px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:12px 19px;border:1px solid var(--line);border-radius:999px;
+  background:rgba(255,253,249,.7);font-size:14px;font-weight:700;
+  color:var(--ink);margin-bottom:28px;
+}
+.eyebrow .star{font-size:19px}
+.hero h1{
+  font:400 clamp(58px,6.3vw,96px)/.94 Georgia,serif;
+  letter-spacing:-4px;color:var(--burgundy);
+  max-width:760px;
+}
+.hero h1 em{font-style:italic}
+.hero-rule{display:flex;align-items:center;gap:13px;margin:32px 0 24px}
+.hero-rule span:first-child{font-size:20px}.hero-rule span:last-child{height:1px;background:var(--line);flex:1}
+.hero-copy{max-width:650px;font-size:16px;line-height:1.72;color:var(--muted);font-weight:400;}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:31px}
+.btn-outline{border:1px solid var(--burgundy);background:transparent;color:var(--burgundy)}
+.btn-outline:hover{background:var(--burgundy);color:#fffaf5;}
+
+/* ---------- dashboard visual ---------- */
+.hero-visual{position:relative;min-height:650px}
+.visual-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  width:100%;max-width:760px;margin-left:auto;position:relative;z-index:2;
+}
+.metric-card{
+  min-height:185px;background:rgba(255,253,249,.92);border:1px solid var(--line);
+  border-radius:22px;padding:23px;box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.metric-card.large{min-height:205px}
+.metric-label{font-size:13px;color:var(--ink);font-weight:600}
+.metric-value{font:400 34px/1.1 Georgia,serif;color:var(--burgundy);margin-top:12px}
+.metric-change{font-size:12px;color:var(--muted);margin-top:8px;font-weight:500;}
+.arrow{
+  position:absolute;right:20px;top:20px;width:43px;height:43px;border-radius:50%;
+  display:grid;place-items:center;background:var(--rose-2);color:var(--burgundy);font-size:22px
+}
+.chart{position:absolute;left:20px;right:20px;bottom:15px;height:62px}
+.chart svg{width:100%;height:100%;overflow:visible}
+
+/* Chart line drawing animation */
+.animated-line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawLine 2s var(--ease) forwards;
+}
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.product-card{
+  grid-column:2;grid-row:1 / span 2;
+  min-height:410px;border-radius:28px;position:relative;overflow:hidden;
+  border:1px solid rgba(101,0,30,.10);box-shadow:var(--shadow);
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.product-card img {
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+}
+.seal{
+  position:absolute;right:-8px;bottom:-8px;width:125px;height:125px;border:1px solid var(--burgundy);
+  border-radius:50%;overflow:hidden;background:rgba(255,253,249,.72);z-index:4;
+}
+.seal img{width:100%;height:100%;object-fit:cover;}
+.market-strip{
+  grid-column:1 / -1;background:rgba(255,253,249,.9);border:1px solid var(--line);
+  border-radius:22px;min-height:118px;padding:21px 28px;box-shadow:var(--shadow);
+}
+.market-title{font-size:13px;font-weight:700;color:var(--burgundy);margin-bottom:20px;letter-spacing:.05em;}
+.market-list{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;align-items:center}
+.market-item{display:flex;align-items:center;justify-content:center;height:42px;overflow:hidden;background:#000;border-radius:10px;padding:4px 10px;}
+.market-item img{height:100%;width:auto;object-fit:contain;display:block;}
+
+/* ---------- sections ---------- */
+.section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:50px}
+.section-kicker{font-size:12px;letter-spacing:.18em;font-weight:700;color:var(--burgundy);text-transform:uppercase;margin-bottom:13px}
+.section-title{font:400 clamp(42px,5vw,70px)/.98 Georgia,serif;color:var(--burgundy);letter-spacing:-2px}
+.section-title em{font-style:italic}
+.section-desc{max-width:500px;color:var(--muted);line-height:1.7;font-size:15px;font-weight:400;}
+
+/* services */
+.services{background:rgba(238,221,216,.28)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service{
+  background:rgba(255,253,249,.8);border:1px solid var(--line);border-radius:24px;padding:30px;min-height:240px;
+  transition:.45s var(--ease);box-shadow:0 10px 30px rgba(76,26,37,.05)
+}
+.service:hover{transform:translateY(-8px);box-shadow:var(--shadow);background:var(--paper)}
+.service-icon{width:48px;height:48px;border-radius:50%;background:var(--rose-2);display:grid;place-items:center;color:var(--burgundy);font-size:20px;margin-bottom:24px}
+.service h3{font:400 22px Georgia,serif;color:var(--burgundy);margin-bottom:12px}
+.service p{font-size:14px;line-height:1.7;color:var(--muted);font-weight:400;}
+
+/* results / platform cards with animation */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.result-card{
+  background:var(--burgundy);color:#fff8f2;border-radius:30px;padding:38px;min-height:320px;position:relative;overflow:hidden;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.result-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(101,0,30,.25);
+}
+.result-card.light{
+  background:var(--paper);color:var(--ink);border:1px solid var(--line);
+}
+.result-card.light:hover{
+  box-shadow:0 25px 50px rgba(101,0,30,.12);
+}
+.result-number{font:400 56px Georgia,serif;color:inherit}
+.result-card p{color:inherit;opacity:.8;max-width:370px;line-height:1.7;margin-top:12px;font-size:15px;font-weight:400;}
+.result-card .mini-chart{position:absolute;left:38px;right:38px;bottom:32px;height:70px}
+.result-card .mini-chart svg{width:100%;height:100%}
+
+/* process with animation */
+.process{background:var(--burgundy);color:#fff8f2}
+.process .section-kicker,.process .section-title{color:#fff8f2}.process .section-desc{color:rgba(255,248,242,.7)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.17);border:1px solid rgba(255,255,255,.17)}
+.step{
+  padding:34px;background:rgba(101,0,30,.8);min-height:260px;
+  transition:transform .4s var(--ease), background .4s var(--ease), box-shadow .4s var(--ease);
+  position:relative;z-index:1;
+}
+.step:hover{
+  transform:translateY(-8px);
+  background:rgba(122,18,49,0.95);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  z-index:2;
+}
+.step-no{font:italic 16px Georgia,serif;opacity:.7}
+.step h3{font:400 24px Georgia,serif;margin:45px 0 12px}
+.step p{font-size:13px;line-height:1.7;opacity:.8;font-weight:400;}
+
+/* portfolio */
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.work-card{min-height:480px;border-radius:28px;border:1px solid var(--line);background:var(--paper);padding:30px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;transition:transform .4s var(--ease), box-shadow .4s var(--ease);}
+.work-card:hover{transform:translateY(-8px);box-shadow:0 25px 50px rgba(101,0,30,.12);}
+.work-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--burgundy)}
+.work-title{font:400 26px Georgia,serif;color:var(--burgundy);max-width:460px;margin-top:10px}
+.work-media{width:100%;height:280px;border-radius:18px;overflow:hidden;margin-top:20px;box-shadow:0 10px 25px rgba(0,0,0,0.08);background:#000;display:flex;align-items:center;justify-content:center;}
+.work-media img{width:100%;height:100%;object-fit:cover;display:block;}
+.work-media video{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* insights with animation */
+.insights{background:rgba(238,221,216,.25)}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.insight{
+  background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.insight:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 50px rgba(101,0,30,.12);
+}
+.insight-visual{
+  height:220px;background:linear-gradient(135deg,#efe2db,#d8c0b3);position:relative;overflow:hidden;
+}
+.insight-visual img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .6s var(--ease);
+}
+.insight:hover .insight-visual img{
+  transform:scale(1.05);
+}
+.insight-body{padding:25px}
+.insight-body small{color:var(--burgundy);font-weight:700;font-size:12px;letter-spacing:.05em;}
+.insight-body h3{font:400 22px Georgia,serif;color:var(--burgundy);margin:11px 0}
+.insight-body p{font-size:13px;line-height:1.65;color:var(--muted);font-weight:400;}
+
+/* CTA */
+.cta-section{padding:110px 0}
+.cta-box{border-radius:36px;background:var(--burgundy);color:#fff8f2;padding:70px;display:flex;justify-content:space-between;align-items:center;gap:40px;box-shadow:0 30px 70px rgba(101,0,30,.18);position:relative;overflow:hidden}
+.cta-box-logo{position:absolute;right:40px;bottom:-60px;width:240px;height:240px;border-radius:50%;overflow:hidden;opacity:0.1;z-index:1;}
+.cta-box-logo img{width:100%;height:100%;object-fit:cover;}
+.cta-box h2{font:400 clamp(40px,4.5vw,64px)/.95 Georgia,serif;max-width:760px;position:relative;z-index:2}
+.cta-box p{max-width:600px;color:rgba(255,248,242,.8);line-height:1.7;margin-top:20px;position:relative;z-index:2;font-size:15px;font-weight:400;}
+.cta-box .btn{background:#fff8f2;color:var(--burgundy);position:relative;z-index:2;white-space:nowrap}
+
+/* footer */
+footer{padding:35px 0 50px;border-top:1px solid var(--line)}
+.footer-row{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.footer-brand{font:400 24px Georgia,serif;color:var(--burgundy);display:flex;align-items:center;gap:12px;}
+.footer-brand-logo{width:36px;height:36px;border-radius:50%;overflow:hidden;}
+.footer-brand-logo img{width:100%;height:100%;object-fit:cover;}
+.footer-brand small{display:block;font:italic 13px Georgia,serif}
+.footer-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;}
+.copyright{font-size:12px;color:#957C83;font-weight:400;}
+.copyright a{color:#0066cc;text-decoration:none;}
+.copyright a:hover{text-decoration:underline;}
+
+/* ---------- text reveal ---------- */
+.reveal{opacity:0;transform:translateY(28px);filter:blur(4px);transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease)}
+.reveal.visible{opacity:1;transform:none;filter:none}
+.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}
+
+/* ---------- responsive ---------- */
+@media(max-width:1120px){
+  .brand{min-width:270px}.nav-links{gap:17px}.nav-links a{font-size:12px}
+  .hero-grid{grid-template-columns:1fr}.hero-visual{max-width:850px;margin:auto}.hero h1{max-width:850px}
+}
+@media(max-width:850px){
+  .container{width:min(100% - 30px,700px)}
+  .nav{border-radius:28px;padding:10px 12px}.brand{min-width:0;flex:1}.brand-mark{width:52px;height:52px}.brand-name{font-size:22px}.brand-script{font-size:14px}
+  .nav-links,.nav-actions .btn{display:none}.mobile-menu{display:grid}.nav-actions{margin-left:auto}
+  .hero{padding-top:50px}.hero-grid{min-height:0;gap:40px}.hero h1{font-size:clamp(44px,11vw,68px);letter-spacing:-3px}.hero-copy{font-size:15px}
+  .hero-visual{min-height:0}.visual-grid{grid-template-columns:1fr 1fr}.product-card{grid-column:1 / -1;grid-row:auto;min-height:340px}.market-strip{grid-column:1 / -1}.market-list{grid-template-columns:repeat(2,1fr)}
+  .section-head{display:block}.section-desc{margin-top:18px}.service-grid,.insight-grid{grid-template-columns:1fr 1fr}.results-grid,.portfolio-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}
+  .cta-box{padding:48px 32px;display:block}.cta-box .btn{margin-top:28px}.footer-row{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:560px){
+  .brand-name{font-size:19px}.brand-script{font-size:12px}.brand-mark{width:48px;height:48px}.menu{width:48px;height:48px}
+  .hero-buttons .btn{width:100%}.trust-mini{margin-top:30px}
+  .visual-grid{grid-template-columns:1fr}.metric-card,.metric-card.large{min-height:170px}.product-card{grid-column:auto}.market-strip{grid-column:auto}
+  .market-list{grid-template-columns:repeat(2,1fr)}.service-grid,.insight-grid,.process-grid{grid-template-columns:1fr}.section{padding:75px 0}
+  .result-card{min-height:250px}.cta-box h2{font-size:38px}
+}
+</style>
+</head>
+
+<body>
+<header class="nav-wrap">
+  <div class="container">
+    <nav class="nav reveal">
+      <a href="#home" class="brand">
+        <div class="brand-mark"><img src="logos/logo.jpeg" alt="E-COMMERCE Logo"></div>
+        <div>
+          <div class="brand-name">E-COMMERCE</div>
+          <div class="brand-script">by Ayesha</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="active" href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#services">SERVICES</a>
+        <a href="#results">RESULTS</a>
+        <a href="#process">PROCESS</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#insights">INSIGHTS</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://wa.me/917850025390" target="_blank" class="btn btn-primary">WHATSAPP: 78500-25390 <span>↗</span></a>
+        <button class="menu mobile-menu" aria-label="Open menu">☰</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow reveal"><span class="star">✦</span> LUXURY E-COMMERCE GROWTH STUDIO</div>
+      <h1 class="reveal delay-1">We Turn Stores<br>Into <em>Iconic Brands.</em></h1>
+      <div class="hero-rule reveal delay-2"><span>✦</span><span></span></div>
+      <p class="hero-copy reveal delay-2">
+        We partner with ambitious brands to create, optimize, and scale their entire e-commerce ecosystem across D2C, Amazon, Flipkart, Meesho, and beyond. From brand strategy and performance marketing to creative, CRO, retention, and marketplace growth, we bring every growth lever together under one roof to drive visibility, conversions, revenue, and long-term profitability.
+      </p>
+      <div class="hero-buttons reveal delay-3">
+        <a href="https://wa.me/917850025390" target="_blank" class="btn btn-primary">CHAT ON WHATSAPP <span>↗</span></a>
+        <a href="#portfolio" class="btn btn-outline"><span>▷</span> VIEW OUR WORK</a>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal delay-2">
+      <div class="visual-grid">
+        <article class="metric-card large">
+          <div class="metric-label">Total Revenue Generated</div>
+          <div class="metric-value">₹<span class="counter" data-target="12.8" data-decimals="1">0.0</span> Cr+</div>
+          <div class="metric-change">+178% vs last 90 days</div>
+          <div class="arrow">↗</div>
+          <div class="chart">
+            <svg viewBox="0 0 300 70" preserveAspectRatio="none">
+              <defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#65001E" stop-opacity=".25"/><stop offset="1" stop-color="#65001E" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 60 L35 51 L70 55 L105 40 L140 48 L175 27 L210 39 L245 25 L275 31 L300 8 L300 70 L0 70Z" fill="url(#g1)"/>
+              <path class="animated-line" d="M0 60 L35 51 L70 55 L105 40 L140 48 L175 27 L210 39 L245 25 L275 31 L300 8" fill="none" stroke="#65001E" stroke-width="2"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="images/product-serum.png" alt="Obroye Serum Product">
+          <div class="seal"><img src="logos/logo.jpeg" alt="Logo"></div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-label">ROAS (Ads)</div>
+          <div class="metric-value"><span class="counter" data-target="4.6" data-decimals="1">0.0</span>x</div>
+          <div class="metric-change">+92% vs last 90 days</div>
+          <div class="chart">
+            <svg viewBox="0 0 300 70" preserveAspectRatio="none"><path class="animated-line" d="M0 58 L45 50 L75 55 L110 37 L145 44 L180 23 L215 34 L250 21 L300 8" fill="none" stroke="#65001E" stroke-width="2"/></svg>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-label">Repeat Purchase Rate</div>
+          <div class="metric-value"><span class="counter" data-target="68" data-decimals="0">0</span>%</div>
+          <div class="metric-change">+35% vs last 90 days</div>
+          <div class="chart">
+            <svg viewBox="0 0 300 70" preserveAspectRatio="none"><path class="animated-line" d="M0 57 L40 52 L75 55 L105 43 L140 48 L172 26 L210 35 L245 18 L300 7" fill="none" stroke="#65001E" stroke-width="2"/></svg>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-label">AOV Growth</div>
+          <div class="metric-value">+<span class="counter" data-target="42" data-decimals="0">0</span>%</div>
+          <div class="metric-change">vs last 90 days</div>
+          <div class="chart">
+            <svg viewBox="0 0 300 70" preserveAspectRatio="none"><path class="animated-line" d="M0 60 L35 52 L65 55 L100 40 L140 47 L170 29 L205 38 L245 24 L300 12" fill="none" stroke="#65001E" stroke-width="2"/></svg>
+          </div>
+        </article>
+
+        <div class="market-strip">
+          <div class="market-title">MARKETPLACES WE SCALE</div>
+          <div class="market-list">
+            <!-- Flipkart -->
+            <div class="market-item">
+              <img src="logos/flipkart.png" alt="Flipkart">
+            </div>
+            <!-- Amazon -->
+            <div class="market-item">
+              <img src="logos/amazon.png" alt="Amazon">
+            </div>
+            <!-- Meesho -->
+            <div class="market-item">
+              <img src="logos/meesho.png" alt="Meesho">
+            </div>
+            <!-- More Marketplaces -->
+            <div class="market-item" style="font-size:13px; font-weight:600; color:#fff; justify-content:center; background:#65001E;">&amp; More</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker reveal">E-COMMERCE MARKETING</div><h2 class="section-title reveal delay-1">Growth that looks<br><em>beautiful on paper.</em></h2></div>
+      <p class="section-desc reveal delay-2">We combine marketplace expertise, performance marketing, creative systems and conversion strategy into one focused growth engine.</p>
+    </div>
+    <div class="results-grid">
+      <article class="result-card reveal">
+        <div class="result-number">₹<span class="counter" data-target="12.8" data-decimals="1">0.0</span> Cr+</div><p>Revenue generated across performance-led e-commerce growth programs.</p>
+        <div class="mini-chart"><svg viewBox="0 0 500 70" preserveAspectRatio="none"><path class="animated-line" d="M0 62 L70 55 L120 59 L175 43 L220 49 L275 28 L330 38 L385 24 L440 30 L500 7" fill="none" stroke="#fff8f2" stroke-width="2"/></svg></div>
+      </article>
+      <article class="result-card light reveal delay-1">
+        <div class="result-number"><span class="counter" data-target="11.8" data-decimals="1">0.0</span>x</div><p>Average ROAS built through structured testing, creative iteration and marketplace-aware performance marketing.</p>
+        <div class="mini-chart"><svg viewBox="0 0 500 70" preserveAspectRatio="none"><path class="animated-line" d="M0 62 L65 54 L120 58 L180 44 L230 48 L290 29 L345 38 L410 22 L500 8" fill="none" stroke="#65001E" stroke-width="2"/></svg></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker reveal">WHAT WE DO</div><h2 class="section-title reveal delay-1">Ecom Marketing<br><em>That Delivers.</em></h2></div>
+      <p class="section-desc reveal delay-2">Everything an ambitious e-commerce brand needs to acquire, convert, retain and scale.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service reveal"><div class="service-icon">⌁</div><h3>Marketplace Account Management</h3><p>Flipkart, Amazon, Meesho and multi-marketplace operations, catalog, growth and profitability.</p></article>
+      <article class="service reveal delay-1"><div class="service-icon">↗</div><h3>Ad Campaigns (PPC)</h3><p>Performance campaigns built around profitable acquisition, testing, scaling and clean reporting.</p></article>
+      <article class="service reveal delay-2"><div class="service-icon">⌕</div><h3>Listings &amp; SEO Optimization</h3><p>High-converting listings, keyword architecture, merchandising and search visibility.</p></article>
+      <article class="service reveal"><div class="service-icon">A+</div><h3>A+ Content &amp; Brand Store</h3><p>Premium storefront experiences that make products easier to understand and easier to buy.</p></article>
+      <article class="service reveal delay-1"><div class="service-icon">✦</div><h3>Creative &amp; Video Production</h3><p>Performance-first creative systems for ads, product launches, social and marketplace content.</p></article>
+      <article class="service reveal delay-2"><div class="service-icon">◌</div><h3>Conversion Rate Optimization</h3><p>Landing pages, product pages, funnels and retention flows designed around measurable conversion lifts.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker reveal">PLATFORM EXPERTISE</div><h2 class="section-title reveal delay-1">Built for every<br><em>commerce channel.</em></h2></div>
+      <p class="section-desc reveal delay-2">From D2C storefronts to the largest Indian marketplaces, E-COMMERCE connects every growth lever.</p>
+    </div>
+    <div class="results-grid">
+      <article class="result-card light reveal"><div class="result-number">Flipkart</div><p>Account management, catalog growth, ads, promotions, content and marketplace scaling.</p></article>
+      <article class="result-card light reveal delay-1"><div class="result-number">Amazon</div><p>Retail-ready listings, PPC, A+ Content, Brand Store and conversion-led optimization.</p></article>
+      <article class="result-card light reveal"><div class="result-number">Meesho</div><p>Catalog visibility, high-margin sales optimization, pricing strategy and seller growth.</p></article>
+      <article class="result-card reveal delay-1"><div class="result-number">Ecom</div><p>Full-funnel marketing across paid media, CRO, retention, creative and marketplace operations.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker">OUR PROCESS</div><h2 class="section-title">Strategy first.<br><em>Scale second.</em></h2></div>
+      <p class="section-desc">A simple, measurable system designed to remove guesswork from e-commerce growth.</p>
+    </div>
+    <div class="process-grid">
+      <article class="step"><div class="step-no">01</div><h3>Audit</h3><p>We map your store, marketplace, funnel, creative, ads and retention opportunities.</p></article>
+      <article class="step"><div class="step-no">02</div><h3>Build</h3><p>We create the growth architecture, content system and channel priorities.</p></article>
+      <article class="step"><div class="step-no">03</div><h3>Test</h3><p>We run disciplined experiments across creative, offers, audiences and conversion.</p></article>
+      <article class="step"><div class="step-no">04</div><h3>Scale</h3><p>We double down on what works and turn performance into repeatable growth.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker reveal">SELECTED WORK</div><h2 class="section-title reveal delay-1">Brands built to<br><em>be remembered.</em></h2></div>
+      <p class="section-desc reveal delay-2">A premium mix of marketplace growth, D2C performance and conversion-focused creative.</p>
+    </div>
+    
+    <!-- Portfolio Grid with Attached Screenshots and Videos -->
+    <div class="portfolio-grid">
+      <!-- Card 1: Dashboard Overview Screenshot -->
+      <article class="work-card reveal">
+        <div>
+          <div class="work-label">D2C BEAUTY / SALES OVERVIEW</div>
+          <div class="work-title">From product launch to a scalable growth engine.</div>
+        </div>
+        <div class="work-media">
+          <img src="images/work-dashboard-1.jpeg" alt="Business Overview Dashboard">
+        </div>
+      </article>
+
+      <!-- Card 2: June Sales Overview Screenshot -->
+      <article class="work-card reveal delay-1">
+        <div>
+          <div class="work-label">MARKETPLACE</div>
+          <div class="work-title">Amazon + Flipkart + Meesho account growth system.</div>
+        </div>
+        <div class="work-media">
+          <img src="images/work-dashboard-2.jpeg" alt="June Business Overview">
+        </div>
+      </article>
+
+      <!-- Card 3: Business Insights Screenshot -->
+      <article class="work-card reveal">
+        <div>
+          <div class="work-label">ANALYTICS &amp; INSIGHTS</div>
+          <div class="work-title">Daily business insights and live order tracking.</div>
+        </div>
+        <div class="work-media">
+          <img src="images/work-dashboard-3.jpeg" alt="Business Insights Daily">
+        </div>
+      </article>
+
+      <!-- Card 4: Video Recording Showcase -->
+      <article class="work-card reveal delay-1">
+        <div>
+          <div class="work-label">PERFORMANCE SHOWCASE</div>
+          <div class="work-title">Live performance tracking and seller hub walkthrough.</div>
+        </div>
+        <div class="work-media">
+          <video autoplay muted loop playsinline>
+            <source src="videos/work-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section insights" id="insights">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker reveal">INSIGHTS</div><h2 class="section-title reveal delay-1">Think smarter.<br><em>Sell better.</em></h2></div>
+      <p class="section-desc reveal delay-2">Practical e-commerce thinking across ads, marketplaces, creative and conversion.</p>
+    </div>
+    <div class="insight-grid">
+      <article class="insight reveal">
+        <div class="insight-visual"><img src="images/insight-scaling.png" alt="How to scale Amazon &amp; Meesho without destroying margins"></div>
+        <div class="insight-body"><small>MARKETPLACE</small><h3>How to scale Amazon &amp; Meesho without destroying margins.</h3><p>Build a marketplace system around contribution margin, not vanity revenue.</p></div>
+      </article>
+      <article class="insight reveal delay-1">
+        <div class="insight-visual"><img src="images/insight-ads.png" alt="Why your ads stop scaling after the first win"></div>
+        <div class="insight-body"><small>PERFORMANCE</small><h3>Why your ads stop scaling after the first win.</h3><p>Creative fatigue, offer structure and landing-page friction often matter more than targeting.</p></div>
+      </article>
+      <article class="insight reveal delay-2">
+        <div class="insight-visual"><img src="images/insight-creative.png" alt="The premium creative system for modern e-commerce"></div>
+        <div class="insight-body"><small>CREATIVE</small><h3>The premium creative system for modern e-commerce.</h3><p>Make every asset beautiful enough for the brand and useful enough for the algorithm.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="cta-box reveal">
+      <div class="cta-box-logo"><img src="logos/logo.jpeg" alt="Logo Watermark"></div>
+      <div>
+        <h2>Ready to turn your store into an <em>iconic brand?</em></h2>
+        <p>Connect instantly via WhatsApp at <strong>+91 7850025390</strong> or drop us a message below.</p>
+        
+        <!-- Social Badges with WhatsApp Number -->
+        <div class="social-icons-group">
+          <!-- Instagram -->
+          <a class="social-badge" href="https://www.instagram.com/ecombyayesha?" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a class="social-badge" href="https://www.facebook.com/share/1DWXti6S7H/" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.5 5 15.5 5H18V0h-3.808C10.59 0 9 1.581 9 4.75V8z"/></svg>
+          </a>
+          <!-- WhatsApp -->
+          <a class="social-badge" href="https://wa.me/917850025390" target="_blank" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </a>
+          <!-- Email -->
+          <a class="social-badge" href="mailto:ecombyayesha19@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+          </a>
+        </div>
+
+      </div>
+      <a class="btn" href="https://wa.me/917850025390" target="_blank">WHATSAPP US <span>↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <div class="footer-brand-logo"><img src="logos/logo.jpeg" alt="Logo"></div>
+      <div>E-COMMERCE <small>by Ayesha</small></div>
+    </div>
+    
+    <!-- Social Badges in Footer -->
+    <div class="footer-links">
+      <a class="social-badge" href="https://www.instagram.com/ecombyayesha?" target="_blank" aria-label="Instagram" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a class="social-badge" href="https://www.facebook.com/share/1DWXti6S7H/" target="_blank" aria-label="Facebook" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.378 14.5 5 15.5 5H18V0h-3.808C10.59 0 9 1.581 9 4.75V8z"/></svg>
+      </a>
+      <a class="social-badge" href="https://wa.me/917850025390" target="_blank" aria-label="WhatsApp" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </a>
+      <a class="social-badge" href="mailto:ecombyayesha19@gmail.com" aria-label="Email" style="width:38px;height:38px;">
+        <svg viewBox="0 0 24 24" style="width:16px;height:16px;"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+      </a>
+    </div>
+
+    <div class="copyright">© 2026 E-COMMERCE. All Rights Reserved. Managed by <a href="https://halomedia.in/" target="_blank">Halo Media</a></div>
+  </div>
+</footer>
+
+<script>
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.08,rootMargin:'0px 0px -45px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+document.querySelectorAll('.nav-links a').forEach(link=>{
+  link.addEventListener('click',()=>{
+    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+document.querySelector('.menu')?.addEventListener('click',()=>{
+  const nav=document.querySelector('.nav');
+  const links=document.querySelector('.nav-links');
+  if(!links) return;
+  const open=links.style.display==='flex';
+  links.style.display=open?'none':'flex';
+  if(!open){
+    links.style.position='absolute';
+    links.style.top='100px';
+    links.style.left='15px';
+    links.style.right='15px';
+    links.style.background='#FFFDF9';
+    links.style.border='1px solid rgba(101,0,30,.12)';
+    links.style.borderRadius='24px';
+    links.style.padding='18px';
+    links.style.flexDirection='column';
+    links.style.boxShadow='0 20px 40px rgba(76,26,37,.12)';
+  }
+});
+
+// Universal counting animation from 0 for all .counter elements
+function animateCounter(el) {
+  const finalValue = parseFloat(el.getAttribute('data-target'));
+  const decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+  const duration = 2000;
+  let startTimestamp = null;
+  
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const current = (progress * finalValue).toFixed(decimals);
+    el.innerHTML = current;
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.counter').forEach(el => {
+  counterObserver.observe(el);
+});
+</script>
+</body>
+</html>

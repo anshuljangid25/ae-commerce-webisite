@@ -317,6 +317,30 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
 .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}.delay-4{transition-delay:.32s}
 
 /* ---------- responsive ---------- */
+.testimonials{position:relative;max-width:900px;margin:0 auto;}
+.testi-track-wrap{overflow:hidden;border-radius:var(--radius);}
+.testi-track{display:flex;transition:transform .5s var(--ease);}
+.testi-card{flex:0 0 100%;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:56px 64px;text-align:center;box-shadow:var(--shadow);}
+.testi-stars{color:var(--burgundy);font-size:20px;letter-spacing:4px;margin-bottom:22px;}
+.testi-quote{font-size:19px;line-height:1.7;color:var(--ink);max-width:640px;margin:0 auto 30px;font-style:italic;}
+.testi-quote.placeholder{color:var(--muted);font-style:normal;}
+.testi-person{display:flex;align-items:center;justify-content:center;gap:14px;}
+.testi-avatar{width:52px;height:52px;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center;color:var(--burgundy);font:600 16px Georgia,serif;flex-shrink:0;}
+.testi-name{font-weight:600;color:var(--ink);font-size:15px;}
+.testi-meta{color:var(--muted);font-size:13px;margin-top:2px;}
+.testi-tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--burgundy);background:var(--rose);padding:5px 14px;border-radius:20px;font-weight:600;}
+.testi-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--burgundy);box-shadow:var(--shadow);transition:background .25s;z-index:2;}
+.testi-arrow:hover{background:var(--rose);}
+.testi-arrow.prev{left:-22px;}
+.testi-arrow.next{right:-22px;}
+.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:26px;}
+.testi-dot{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:all .25s;}
+.testi-dot.active{background:var(--burgundy);width:22px;border-radius:5px;}
+@media(max-width:640px){
+  .testi-card{padding:40px 24px;}
+  .testi-quote{font-size:16px}
+  .testi-arrow{display:none}
+}
 @media(max-width:1120px){
   .brand{min-width:270px}.nav-links{gap:17px}.nav-links a{font-size:12px}
   .hero-grid{grid-template-columns:1fr}.hero-visual{max-width:850px;margin:auto}.hero h1{max-width:850px}
@@ -505,6 +529,103 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
       <article class="result-card reveal delay-1"><div class="result-number">Ecom</div><p>Full-funnel marketing across paid media, CRO, retention, creative and marketplace operations.</p></article>
     </div>
   </div>
+</section>
+
+<section class="section" id="testimonials">
+ <div class="container">
+  <div class="section-head">
+    <div><div class="section-kicker reveal">CLIENT VOICES</div><h2 class="section-title reveal delay-1">What sellers say<br><em>after working with us.</em></h2></div>
+    <p class="section-desc reveal delay-2">Illustrative examples — swap in real client quotes anytime.</p>
+  </div>
+  <div class="testimonials reveal">
+    <button class="testi-arrow prev" aria-label="Previous">&#8249;</button>
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Our Amazon PPC spend was going up but sales weren't. Within 2 months of working together, ROAS improved and our A+ Content finally looked premium."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Amazon Seller</div>
+              <div class="testi-meta">Delhi &middot; Home &amp; Kitchen</div>
+            </div>
+          </div>
+          <div class="testi-tag">Amazon</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Listing optimization ke baad hamare organic orders bahut badh gaye. Brand Store bhi bilkul professional lag raha hai ab."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Amazon Seller</div>
+              <div class="testi-meta">Ahmedabad &middot; Beauty &amp; Personal Care</div>
+            </div>
+          </div>
+          <div class="testi-tag">Amazon</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Our Flipkart catalog was messy and hard to scale. The team cleaned it up, ran smarter ads, and our account finally started growing month over month."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">F</div>
+            <div>
+              <div class="testi-name">Flipkart Seller</div>
+              <div class="testi-meta">Jaipur &middot; Fashion &amp; Apparel</div>
+            </div>
+          </div>
+          <div class="testi-tag">Flipkart</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Promotions aur account management dono sambhal liya inhone. Ab hume khud manage nahi karna padta, aur growth bhi consistent hai."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">F</div>
+            <div>
+              <div class="testi-name">Flipkart Seller</div>
+              <div class="testi-meta">Surat &middot; Electronics</div>
+            </div>
+          </div>
+          <div class="testi-tag">Flipkart</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Pricing strategy was our biggest problem on Meesho — margins kept shrinking. This fixed it while orders kept growing at the same time."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Meesho Seller</div>
+              <div class="testi-meta">Indore &middot; Home Decor</div>
+            </div>
+          </div>
+          <div class="testi-tag">Meesho</div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Catalog visibility bahut better ho gayi hai. Pehle product dikhta hi nahi tha, ab regular orders aa rahe hain."</p>
+          <div class="testi-person">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Meesho Seller</div>
+              <div class="testi-meta">Lucknow &middot; Kids Wear</div>
+            </div>
+          </div>
+          <div class="testi-tag">Meesho</div>
+        </div>
+
+      </div>
+    </div>
+    <button class="testi-arrow next" aria-label="Next">&#8250;</button>
+    <div class="testi-dots" id="testiDots"></div>
+  </div>
+ </div>
 </section>
 
 <section class="section process" id="process">
@@ -735,6 +856,32 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.counter').forEach(el => {
   counterObserver.observe(el);
 });
+
+// Testimonial carousel
+(function(){
+  const track = document.getElementById('testiTrack');
+  if(!track) return;
+  const cards = track.children;
+  const dotsWrap = document.getElementById('testiDots');
+  const prevBtn = document.querySelector('.testi-arrow.prev');
+  const nextBtn = document.querySelector('.testi-arrow.next');
+  let index = 0;
+  for(let i=0;i<cards.length;i++){
+    const dot = document.createElement('div');
+    dot.className = 'testi-dot' + (i===0 ? ' active' : '');
+    dot.addEventListener('click', () => go(i));
+    dotsWrap.appendChild(dot);
+  }
+  function go(i){
+    index = (i + cards.length) % cards.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    [...dotsWrap.children].forEach((d,j)=>d.classList.toggle('active', j===index));
+  }
+  prevBtn.addEventListener('click', ()=>go(index-1));
+  nextBtn.addEventListener('click', ()=>go(index+1));
+  let auto = setInterval(()=>go(index+1), 6000);
+  document.querySelector('.testimonials').addEventListener('mouseenter', ()=>clearInterval(auto));
+})();
 </script>
 </body>
 </html>

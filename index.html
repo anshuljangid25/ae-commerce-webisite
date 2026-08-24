@@ -896,8 +896,13 @@ document.querySelectorAll('.counter').forEach(el => {
   }
   prevBtn.addEventListener('click', ()=>go(index-1));
   nextBtn.addEventListener('click', ()=>go(index+1));
-  let auto = setInterval(()=>go(index+1), 6000);
-  document.querySelector('.testimonials').addEventListener('mouseenter', ()=>clearInterval(auto));
+  let auto = setInterval(()=>go(index+1), 1500);
+  const testiWrap = document.querySelector('.testimonials');
+  testiWrap.addEventListener('mouseenter', ()=>clearInterval(auto));
+  testiWrap.addEventListener('mouseleave', ()=>{
+    clearInterval(auto);
+    auto = setInterval(()=>go(index+1), 1500);
+  });
 })();
 </script>
 </body>

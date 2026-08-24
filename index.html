@@ -25,7 +25,7 @@
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
 body{
   background:
     radial-gradient(circle at 88% 12%, rgba(238,221,216,.55), transparent 25%),
@@ -34,10 +34,12 @@ body{
   color:var(--ink);
   font-family:'Poppins',Arial,Helvetica,sans-serif;
   overflow-x:hidden;
+  max-width:100vw;
 }
+main{overflow-x:hidden;width:100%}
 a{text-decoration:none;color:inherit}
 button{font:inherit}
-.container{width:min(1390px,calc(100% - 56px));margin:auto}
+.container{width:min(1390px,calc(100% - 32px));margin:auto}
 
 /* ---------- navigation ---------- */
 .nav-wrap{padding:22px 0 0;position:relative;z-index:20}
@@ -115,7 +117,7 @@ button{font:inherit}
 
 /* ---------- hero ---------- */
 .hero{padding:76px 0 34px}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;min-height:690px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;min-height:690px;width:100%;overflow:hidden}
 .eyebrow{
   display:inline-flex;align-items:center;gap:12px;
   padding:12px 19px;border:1px solid var(--line);border-radius:999px;
@@ -148,12 +150,6 @@ button{font:inherit}
   position:relative;overflow:hidden;
 }
 .metric-card.large{min-height:205px}
-.metric-card.feature{
-  grid-column:2;grid-row:1 / span 2;min-height:410px;padding:34px;
-  display:flex;flex-direction:column;
-}
-.metric-value.big{font-size:44px;margin-top:16px}
-.metric-card.feature .chart{left:34px;right:34px;bottom:32px;height:150px}
 .metric-label{font-size:13px;color:var(--ink);font-weight:600}
 .metric-value{font:400 34px/1.1 Georgia,serif;color:var(--burgundy);margin-top:12px}
 .metric-change{font-size:12px;color:var(--muted);margin-top:8px;font-weight:500;}
@@ -209,10 +205,11 @@ button{font:inherit}
 
 /* services */
 .services{background:rgba(238,221,216,.28)}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%}
 .service{
   background:rgba(255,253,249,.8);border:1px solid var(--line);border-radius:24px;padding:30px;min-height:240px;
-  transition:.45s var(--ease);box-shadow:0 10px 30px rgba(76,26,37,.05)
+  transition:.45s var(--ease);box-shadow:0 10px 30px rgba(76,26,37,.05);
+  min-width:0;width:100%;
 }
 .service:hover{transform:translateY(-8px);box-shadow:var(--shadow);background:var(--paper)}
 .service-icon{width:48px;height:48px;border-radius:50%;background:var(--rose-2);display:grid;place-items:center;color:var(--burgundy);font-size:20px;margin-bottom:24px}
@@ -225,6 +222,7 @@ button{font:inherit}
   background:var(--burgundy);color:#fff8f2;border-radius:30px;padding:38px;min-height:320px;position:relative;overflow:hidden;
   display:flex;flex-direction:column;
   transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  min-width:0;width:100%;
 }
 .result-card:hover{
   transform:translateY(-10px);
@@ -272,10 +270,11 @@ button{font:inherit}
 
 /* insights with animation */
 .insights{background:rgba(238,221,216,.25)}
-.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;width:100%;overflow:hidden}
 .insight{
   background:var(--paper);border:1px solid var(--line);border-radius:24px;overflow:hidden;
   transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  min-width:0;width:100%;
 }
 .insight:hover{
   transform:translateY(-10px);
@@ -352,21 +351,39 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
   .hero-grid{grid-template-columns:1fr}.hero-visual{max-width:850px;margin:auto}.hero h1{max-width:850px}
 }
 @media(max-width:850px){
-  .container{width:min(100% - 30px,700px)}
+  .container{width:100%;padding-left:16px;padding-right:16px;max-width:700px;margin:auto}
   .nav{border-radius:28px;padding:10px 12px}.brand{min-width:0;flex:1}.brand-mark{width:52px;height:52px}.brand-name{font-size:22px}.brand-script{font-size:14px}
   .nav-links,.nav-actions .btn{display:none}.mobile-menu{display:grid}.nav-actions{margin-left:auto}
-  .hero{padding-top:50px}.hero-grid{min-height:0;gap:40px}.hero h1{font-size:clamp(44px,11vw,68px);letter-spacing:-3px}.hero-copy{font-size:15px}
-  .hero-visual{min-height:0}.visual-grid{grid-template-columns:1fr 1fr}.product-card,.metric-card.feature{grid-column:1 / -1;grid-row:auto;min-height:340px}.market-strip{grid-column:1 / -1}.market-list{grid-template-columns:repeat(2,1fr)}
+  .hero{padding-top:50px}.hero-grid{min-height:0;gap:40px}.hero h1{font-size:clamp(36px,9vw,60px);letter-spacing:-2px}.hero-copy{font-size:15px}
+  .hero-visual{min-height:0}.visual-grid{grid-template-columns:1fr 1fr}.product-card{grid-column:1 / -1;grid-row:auto;min-height:340px}.market-strip{grid-column:1 / -1}.market-list{grid-template-columns:repeat(2,1fr)}
   .section-head{display:block}.section-desc{margin-top:18px}.service-grid,.insight-grid{grid-template-columns:1fr 1fr}.results-grid,.portfolio-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}
-  .cta-box{padding:48px 32px;display:block}.cta-box .btn{margin-top:28px}.footer-row{flex-direction:column;align-items:flex-start}
+  .cta-box{padding:48px 24px;display:block}.cta-box .btn{margin-top:28px}.footer-row{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:560px){
+  .container{padding-left:14px;padding-right:14px}
   .brand-name{font-size:19px}.brand-script{font-size:12px}.brand-mark{width:48px;height:48px}.menu{width:48px;height:48px}
-  .hero-buttons .btn{width:100%}.trust-mini{margin-top:30px}
-  .visual-grid{grid-template-columns:1fr}.metric-card,.metric-card.large{min-height:170px}.metric-card.feature{min-height:250px;padding:26px}.metric-card.feature .chart{height:100px;left:26px;right:26px;bottom:24px}.product-card,.metric-card.feature{grid-column:auto}.market-strip{grid-column:auto}
-  .market-list{grid-template-columns:repeat(2,1fr)}.service-grid,.insight-grid,.process-grid{grid-template-columns:1fr}.section{padding:75px 0}
-  .result-card{min-height:250px}.cta-box h2{font-size:38px}
-  .work-media{height:auto;padding:8px}.work-media img,.work-media video{width:100%;height:auto;object-fit:contain;}
+  .hero{padding:40px 0 24px}
+  .hero h1{font-size:clamp(30px,8.5vw,50px);letter-spacing:-1.5px;max-width:100%}
+  .hero-copy{font-size:14px}
+  .eyebrow{font-size:12px;padding:9px 14px}
+  .hero-buttons{flex-direction:column;gap:12px}
+  .hero-buttons .btn{width:100%;justify-content:center}.trust-mini{margin-top:30px}
+  .visual-grid{grid-template-columns:1fr}.metric-card,.metric-card.large{min-height:160px}.product-card{grid-column:auto}.market-strip{grid-column:auto}
+  .market-list{grid-template-columns:repeat(2,1fr)}.service-grid,.insight-grid,.process-grid{grid-template-columns:1fr}.section{padding:60px 0}
+  .result-card{min-height:220px;padding:28px}
+  .result-number{font-size:42px}
+  .section-title{font-size:clamp(32px,8vw,50px);letter-spacing:-1px}
+  .insight-grid{grid-template-columns:1fr}
+  .insight{width:100%;overflow:hidden}
+  .insight-visual{height:190px}
+  .work-card{min-height:auto;padding:22px}
+  .work-media{height:220px}
+  .step{padding:24px}
+  .cta-box{padding:36px 16px;display:block}.cta-box h2{font-size:32px}
+  .cta-box .btn{margin-top:24px;width:100%;justify-content:center}
+  .process-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr}
+  .testi-card{padding:32px 16px}
 }
 </style>
 </head>
@@ -432,18 +449,8 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
           </div>
         </article>
 
-        <article class="metric-card feature">
-          <div class="metric-label">Total Orders Generated</div>
-          <div class="metric-value big"><span class="counter" data-target="547579" data-decimals="0">0</span>+</div>
-          <div class="metric-change">+164% vs last 90 days</div>
-          <div class="arrow">↗</div>
-          <div class="chart">
-            <svg viewBox="0 0 300 110" preserveAspectRatio="none">
-              <defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#65001E" stop-opacity=".25"/><stop offset="1" stop-color="#65001E" stop-opacity="0"/></linearGradient></defs>
-              <path d="M0 95 L35 88 L70 92 L105 70 L140 78 L175 50 L210 60 L245 32 L275 40 L300 12 L300 110 L0 110Z" fill="url(#g2)"/>
-              <path class="animated-line" d="M0 95 L35 88 L70 92 L105 70 L140 78 L175 50 L210 60 L245 32 L275 40 L300 12" fill="none" stroke="#65001E" stroke-width="2"/>
-            </svg>
-          </div>
+        <article class="product-card">
+          <img src="images/product-serum.png" alt="Obroye Serum Product">
         </article>
 
         <article class="metric-card">
@@ -549,8 +556,7 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
 </section>
 
 <section class="section" id="testimonials">
- <div class="container">
-  <div class="section-head">
+  <div class="section-head" style="align-items:center">
     <div><div class="section-kicker reveal">CLIENT VOICES</div><h2 class="section-title reveal delay-1">What sellers say<br><em>after working with us.</em></h2></div>
     <p class="section-desc reveal delay-2">Illustrative examples — swap in real client quotes anytime.</p>
   </div>
@@ -642,7 +648,6 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
     <button class="testi-arrow next" aria-label="Next">&#8250;</button>
     <div class="testi-dots" id="testiDots"></div>
   </div>
- </div>
 </section>
 
 <section class="section process" id="process">
@@ -687,7 +692,7 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
           <div class="work-title">Amazon + Flipkart + Meesho account growth system.</div>
         </div>
         <div class="work-media">
-          <img src="images/work-dashboard-2.jpeg" alt="Amazon Seller Central Sales Dashboard">
+          <img src="images/work-dashboard-2.jpeg" alt="June Business Overview">
         </div>
       </article>
 
@@ -852,8 +857,7 @@ function animateCounter(el) {
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    const raw = progress * finalValue;
-    const current = decimals > 0 ? raw.toFixed(decimals) : Math.round(raw).toLocaleString('en-IN');
+    const current = (progress * finalValue).toFixed(decimals);
     el.innerHTML = current;
     if (progress < 1) {
       window.requestAnimationFrame(step);
@@ -897,13 +901,8 @@ document.querySelectorAll('.counter').forEach(el => {
   }
   prevBtn.addEventListener('click', ()=>go(index-1));
   nextBtn.addEventListener('click', ()=>go(index+1));
-  let auto = setInterval(()=>go(index+1), 1500);
-  const testiWrap = document.querySelector('.testimonials');
-  testiWrap.addEventListener('mouseenter', ()=>clearInterval(auto));
-  testiWrap.addEventListener('mouseleave', ()=>{
-    clearInterval(auto);
-    auto = setInterval(()=>go(index+1), 1500);
-  });
+  let auto = setInterval(()=>go(index+1), 6000);
+  document.querySelector('.testimonials').addEventListener('mouseenter', ()=>clearInterval(auto));
 })();
 </script>
 </body>

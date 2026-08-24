@@ -148,6 +148,12 @@ button{font:inherit}
   position:relative;overflow:hidden;
 }
 .metric-card.large{min-height:205px}
+.metric-card.feature{
+  grid-column:2;grid-row:1 / span 2;min-height:410px;padding:34px;
+  display:flex;flex-direction:column;
+}
+.metric-value.big{font-size:44px;margin-top:16px}
+.metric-card.feature .chart{left:34px;right:34px;bottom:32px;height:150px}
 .metric-label{font-size:13px;color:var(--ink);font-weight:600}
 .metric-value{font:400 34px/1.1 Georgia,serif;color:var(--burgundy);margin-top:12px}
 .metric-change{font-size:12px;color:var(--muted);margin-top:8px;font-weight:500;}
@@ -350,14 +356,14 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
   .nav{border-radius:28px;padding:10px 12px}.brand{min-width:0;flex:1}.brand-mark{width:52px;height:52px}.brand-name{font-size:22px}.brand-script{font-size:14px}
   .nav-links,.nav-actions .btn{display:none}.mobile-menu{display:grid}.nav-actions{margin-left:auto}
   .hero{padding-top:50px}.hero-grid{min-height:0;gap:40px}.hero h1{font-size:clamp(44px,11vw,68px);letter-spacing:-3px}.hero-copy{font-size:15px}
-  .hero-visual{min-height:0}.visual-grid{grid-template-columns:1fr 1fr}.product-card{grid-column:1 / -1;grid-row:auto;min-height:340px}.market-strip{grid-column:1 / -1}.market-list{grid-template-columns:repeat(2,1fr)}
+  .hero-visual{min-height:0}.visual-grid{grid-template-columns:1fr 1fr}.product-card,.metric-card.feature{grid-column:1 / -1;grid-row:auto;min-height:340px}.market-strip{grid-column:1 / -1}.market-list{grid-template-columns:repeat(2,1fr)}
   .section-head{display:block}.section-desc{margin-top:18px}.service-grid,.insight-grid{grid-template-columns:1fr 1fr}.results-grid,.portfolio-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}
   .cta-box{padding:48px 32px;display:block}.cta-box .btn{margin-top:28px}.footer-row{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:560px){
   .brand-name{font-size:19px}.brand-script{font-size:12px}.brand-mark{width:48px;height:48px}.menu{width:48px;height:48px}
   .hero-buttons .btn{width:100%}.trust-mini{margin-top:30px}
-  .visual-grid{grid-template-columns:1fr}.metric-card,.metric-card.large{min-height:170px}.product-card{grid-column:auto}.market-strip{grid-column:auto}
+  .visual-grid{grid-template-columns:1fr}.metric-card,.metric-card.large{min-height:170px}.metric-card.feature{min-height:250px;padding:26px}.metric-card.feature .chart{height:100px;left:26px;right:26px;bottom:24px}.product-card,.metric-card.feature{grid-column:auto}.market-strip{grid-column:auto}
   .market-list{grid-template-columns:repeat(2,1fr)}.service-grid,.insight-grid,.process-grid{grid-template-columns:1fr}.section{padding:75px 0}
   .result-card{min-height:250px}.cta-box h2{font-size:38px}
 }
@@ -425,8 +431,18 @@ footer{padding:35px 0 50px;border-top:1px solid var(--line)}
           </div>
         </article>
 
-        <article class="product-card">
-          <img src="images/product-serum.png" alt="Obroye Serum Product">
+        <article class="metric-card feature">
+          <div class="metric-label">Total Orders Generated</div>
+          <div class="metric-value big"><span class="counter" data-target="24850" data-decimals="0">0</span>+</div>
+          <div class="metric-change">+164% vs last 90 days</div>
+          <div class="arrow">↗</div>
+          <div class="chart">
+            <svg viewBox="0 0 300 110" preserveAspectRatio="none">
+              <defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#65001E" stop-opacity=".25"/><stop offset="1" stop-color="#65001E" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 95 L35 88 L70 92 L105 70 L140 78 L175 50 L210 60 L245 32 L275 40 L300 12 L300 110 L0 110Z" fill="url(#g2)"/>
+              <path class="animated-line" d="M0 95 L35 88 L70 92 L105 70 L140 78 L175 50 L210 60 L245 32 L275 40 L300 12" fill="none" stroke="#65001E" stroke-width="2"/>
+            </svg>
+          </div>
         </article>
 
         <article class="metric-card">
@@ -835,7 +851,8 @@ function animateCounter(el) {
   const step = (timestamp) => {
     if (!startTimestamp) startTimestamp = timestamp;
     const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-    const current = (progress * finalValue).toFixed(decimals);
+    const raw = progress * finalValue;
+    const current = decimals > 0 ? raw.toFixed(decimals) : Math.round(raw).toLocaleString('en-IN');
     el.innerHTML = current;
     if (progress < 1) {
       window.requestAnimationFrame(step);
